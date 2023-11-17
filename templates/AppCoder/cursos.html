@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block cambio %}
+{% for curso in cursos %}
+    <h2 style="color:#3333ff">{{curso.nombre}}</h2>
+    <p class="lead mb-0" style="color:#ff3333">
+        número de camada {{curso.camada}}
+    </p>
+    <hr>
+{% endfor %}
+{% endblock %}
