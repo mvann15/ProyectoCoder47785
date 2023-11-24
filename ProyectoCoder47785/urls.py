@@ -16,8 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from AppCoder.views import crear_curso
+from AppCoder.views import mostrar_cursos
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', mostrar_cursos),
     path('app/', include('AppCoder.urls'))
 ]
