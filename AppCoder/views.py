@@ -1,3 +1,5 @@
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.utils.datastructures import MultiValueDictKeyError
@@ -6,7 +8,7 @@ from AppCoder.models import Curso
 from AppCoder.forms import CursoForm, BusquedaCursoForm
 
 
-class CursoList(ListView):
+class CursoList(LoginRequiredMixin, ListView):
     model = Curso
     template_name = "AppCoder/cursos_1.html"
 
@@ -52,7 +54,7 @@ def crear_curso(request):
 
     return redirect("/app/cursos/")
 
-
+@login_required
 def crear_curso_form(request):
     if request.method == "POST":
 
