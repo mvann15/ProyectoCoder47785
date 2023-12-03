@@ -54,6 +54,7 @@ def crear_curso(request):
 
     return redirect("/app/cursos/")
 
+
 @login_required
 def crear_curso_form(request):
     if request.method == "POST":
